@@ -1,25 +1,25 @@
-const path = require("path");
+const path = require('path')
 /* const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin; */
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         // use only in prod moode
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ["eslint-loader"]
-      }
+        use: ['eslint-loader'],
+      },
     ],
   },
   // use only in prod moode
@@ -28,10 +28,10 @@ module.exports = {
   ], */
   // use oonly in dev mode
   devServer: {
-    contentBase: path.join(__dirname, "public"),
-    publicPath: "/dist/",
+    contentBase: path.join(__dirname, 'public'),
+    publicPath: '/dist/',
     compress: true,
     hot: true,
-    port: 9000
+    port: 9000,
   },
-};
+}
